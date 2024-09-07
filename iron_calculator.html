@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,46 +12,29 @@
             margin: 0 auto;
             padding: 20px;
         }
-        select, input, button {
+
+        select,
+        input,
+        button {
             margin: 5px 0;
             padding: 5px;
-            width: 100%;
-            box-sizing: border-box;
         }
+
         #foodList {
             margin-top: 20px;
         }
+
         .food-item {
             margin-bottom: 10px;
         }
     </style>
 </head>
+
 <body>
     <h1>Iron Intake Calculator</h1>
+    <p>Daily Iron Intake Goal: 17mg</p>
     <select id="foodSelect">
         <option value="">Select a food</option>
-        <option value="spinach">spinach (2.7 mg/100g)</option>
-        <option value="lentils">lentils (3.3 mg/100g)</option>
-        <option value="tofu">tofu (5.4 mg/100g)</option>
-        <option value="beef_liver">beef liver (6.5 mg/100g)</option>
-        <option value="oysters">oysters (5.7 mg/100g)</option>
-        <option value="chickpeas">chickpeas (2.9 mg/100g)</option>
-        <option value="dark_chocolate">dark chocolate (11.9 mg/100g)</option>
-        <option value="white_beans">white beans (5.1 mg/100g)</option>
-        <option value="fortified_cereal">fortified cereal (4.5 mg/100g)</option>
-        <option value="pumpkin_seeds">pumpkin seeds (3.3 mg/100g)</option>
-        <option value="quinoa">quinoa (1.5 mg/100g)</option>
-        <option value="kidney_beans">kidney beans (2.9 mg/100g)</option>
-        <option value="sardines">sardines (2.9 mg/100g)</option>
-        <option value="beef_sirloin">beef sirloin (2.1 mg/100g)</option>
-        <option value="cashews">cashews (6.7 mg/100g)</option>
-        <option value="turkey">turkey (1.4 mg/100g)</option>
-        <option value="egg_yolks">egg yolks (2.7 mg/100g)</option>
-        <option value="dried_apricots">dried apricots (2.7 mg/100g)</option>
-        <option value="fortified_oatmeal">fortified oatmeal (4.5 mg/100g)</option>
-        <option value="broccoli">broccoli (0.9 mg/100g)</option>
-        <option value="tahini">tahini (טחינה) (8.2 mg/100g)</option>
-        <option value="whole_eggs">whole eggs (1.8 mg/100g)</option>
     </select>
     <input type="number" id="gramInput" placeholder="Grams" min="1">
     <button onclick="addFood()">Add Food</button>
@@ -63,29 +47,52 @@
         const ironRichFoods = {
             "spinach": 2.7,
             "lentils": 3.3,
-            "tofu": 5.4,
-            "beef_liver": 6.5,
-            "oysters": 5.7,
+            "whole-egg": 1.8,
+            "tahini": 8.2,
             "chickpeas": 2.9,
-            "dark_chocolate": 11.9,
+            "dark-chocolate": 11.0,
+            "ground-beef": 2.4,
+            "pasta": 1.1,
+            "white-rice": 0.2,
             "white_beans": 5.1,
-            "fortified_cereal": 4.5,
-            "pumpkin_seeds": 3.3,
+            "pumpkin-seeds": 3.3,
             "quinoa": 1.5,
-            "kidney_beans": 2.9,
             "sardines": 2.9,
-            "beef_sirloin": 2.1,
+            "beef-sirloin": 2.1,
             "cashews": 6.7,
             "turkey": 1.4,
-            "egg_yolks": 2.7,
-            "dried_apricots": 2.7,
+            "dried-apricots": 2.7,
             "fortified_oatmeal": 4.5,
             "broccoli": 0.9,
-            "tahini": 8.2,
-            "whole_eggs": 1.8
+            "red-meat": 2.7,
+            "tuna": 1.3,
+            "soybeans": 5.1,
+            "chicken": 0.7,
+            "almonds": 3.7,
+            "swiss_chard": 1.8,
+            "baked_potato": 1.1,
+            "sesame_seeds": 14.6,
+            "sunflower_seeds": 5.3,
+            "kale": 1.5,
+            "edamame": 2.5,
+            "figs": 2.0,
+            "dates": 0.9,
+            "peas": 1.5,
+            "raisins": 1.9,
+            "tofu": 5.4,
+            "fortified_cereal": 4.5,
         };
 
         let addedFoods = [];
+
+        // Populate the dropdown list
+        const foodSelect = document.getElementById('foodSelect');
+        for (let food in ironRichFoods) {
+            let option = document.createElement('option');
+            option.value = food;
+            option.textContent = food.replace(/_/g, ' ') + ` (${ironRichFoods[food]} mg/100g)`;
+            foodSelect.appendChild(option);
+        }
 
         function addFood() {
             const foodSelect = document.getElementById('foodSelect');
@@ -116,4 +123,5 @@
         }
     </script>
 </body>
+
 </html>
