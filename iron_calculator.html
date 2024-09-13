@@ -56,6 +56,9 @@
             "white-rice": 0.2,
             "white_beans": 5.1,
             "pumpkin-seeds": 3.3,
+            "white-bread": 3.6,
+            "spelt-bread": 2.4,
+            "pastrami": 2.2,
             "quinoa": 1.5,
             "sardines": 2.9,
             "beef-sirloin": 2.1,
@@ -80,14 +83,24 @@
             "peas": 1.5,
             "raisins": 1.9,
             "tofu": 5.4,
-            "fortified_cereal": 4.5,
+            "gouda-cheese": 0.24
         };
 
         let addedFoods = [];
 
         // Populate the dropdown list
         const foodSelect = document.getElementById('foodSelect');
-        for (let food in ironRichFoods) {
+
+        // Sort list
+        const sortedKeys = Object.keys(ironRichFoods).sort();
+
+        // Create a new object with sorted keys
+        const sortedIronRichFoods = {};
+        sortedKeys.forEach(key => {
+            sortedIronRichFoods[key] = ironRichFoods[key];
+        });
+        
+        for (let food in sortedIronRichFoods) {
             let option = document.createElement('option');
             option.value = food;
             option.textContent = food.replace(/_/g, ' ') + ` (${ironRichFoods[food]} mg/100g)`;
