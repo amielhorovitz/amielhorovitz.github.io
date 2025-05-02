@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>דוג'ו ג'יוג'יטסו</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            color: #111;
+        }
+
+        header {
+            background-color: #000;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            margin-left: 1rem;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .hero {
+            background-image: url('https://images.unsplash.com/photo-1584467735871-d2fbf3e27caa');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            background-color: #d32f2f;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .section {
+            padding: 2rem;
+            background-color: white;
+            margin: 1rem auto;
+            max-width: 900px;
+            border-radius: 8px;
+        }
+
+        .section h2 {
+            margin-bottom: 1rem;
+            color: #d32f2f;
+        }
+
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1rem;
+        }
+
+        .benefit-card {
+            background-color: #eee;
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        footer {
+            background-color: #111;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div>דוג'ו ג'יוג'יטסו</div>
+        <nav>
+            <a href="#about">עלינו</a>
+            <a href="#adults">מבוגרים</a>
+            <a href="#kids">ילדים</a>
+            <a href="#contact">צור קשר</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>התחל את מסע הג'יוג'יטסו שלך היום</h1>
+        <p>אימונים למבוגרים וילדים בכל הרמות</p>
+        <button class="btn">קבע שיעור ניסיון</button>
+    </section>
+
+    <section class="section" id="about">
+        <h2>מי אנחנו</h2>
+        <p>ברוכים הבאים לדוג'ו מקצועי לג'יוג'יטסו ברזילאי. צוות המדריכים שלנו מורכב מאנשי מקצוע מנוסים, עם גישה אישית
+            לכל תלמיד ותלמידה.</p>
+    </section>
+
+    <section class="section" id="adults">
+        <h2>אימונים למבוגרים</h2>
+        <div class="benefits">
+            <div class="benefit-card">כושר גופני מעולה</div>
+            <div class="benefit-card">שליטה עצמית ומודעות</div>
+            <div class="benefit-card">הגנה עצמית יעילה</div>
+        </div>
+    </section>
+
+    <section class="section" id="kids">
+        <h2>אימונים לילדים</h2>
+        <div class="benefits">
+            <div class="benefit-card">ביטחון עצמי</div>
+            <div class="benefit-card">קואורדינציה ומשמעת</div>
+            <div class="benefit-card">פעילות גופנית מהנה</div>
+        </div>
+    </section>
+
+    <section class="section" id="contact">
+        <h2>צור קשר</h2>
+        <p>טלפון: 050-1234567<br>
+            כתובת: רחוב הלוחם 10, תל אביב<br>
+            אימייל: dojo@example.com</p>
+    </section>
+
+    <footer>
+        &copy; 2025 דוג'ו ג'יוג'יטסו - כל הזכויות שמורות
+    </footer>
+</body>
+
+</html>
