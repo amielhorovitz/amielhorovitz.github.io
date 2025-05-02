@@ -22,18 +22,31 @@
             align-items: center;
         }
 
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+        }
+
         nav a {
             color: white;
             margin-left: 1rem;
             text-decoration: none;
             font-weight: bold;
+            display: inline-block;
+        }
+
+        nav .icon {
+            font-size: 1.5rem;
+            margin-right: 10px;
         }
 
         .hero {
             background-image: url('https://images.unsplash.com/photo-1584467735871-d2fbf3e27caa');
             background-size: cover;
             background-position: center;
-            color: white;
+            color: #d32f2f;
             text-align: center;
             padding: 4rem 2rem;
         }
@@ -90,6 +103,25 @@
             padding: 1rem;
         }
 
+        .social-links a {
+            margin: 0 10px;
+            font-size: 1.5rem;
+            color: #d32f2f;
+            text-decoration: none;
+        }
+
+        .social-links i {
+            margin-left: 10px;
+            font-size: 1.8rem;
+        }
+
+        .gallery img {
+            width: 100%;
+            max-width: 300px;
+            margin: 10px;
+            border-radius: 8px;
+        }
+
         @media (max-width: 600px) {
             .hero h1 {
                 font-size: 2rem;
@@ -98,12 +130,47 @@
             .hero p {
                 font-size: 1rem;
             }
+
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav a {
+                margin: 1rem 0;
+            }
+
+            .hamburger {
+                display: block;
+                cursor: pointer;
+            }
+
+            .hamburger div {
+                width: 30px;
+                height: 5px;
+                background-color: #fff;
+                margin: 6px 0;
+            }
+
+            nav ul {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                text-align: center;
+                padding: 0;
+                margin: 0;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
         }
     </style>
 </head>
 
 <body>
     <header>
+        <div class="icon">🥋</div> <!-- Martial Arts Icon -->
         <div>דוג'ו ג'יוג'יטסו</div>
         <nav>
             <a href="#about">עלינו</a>
@@ -115,14 +182,25 @@
 
     <section class="hero">
         <h1>התחל את מסע הג'יוג'יטסו שלך היום</h1>
-        <p>אימונים למבוגרים וילדים בכל הרמות</p>
-        <button class="btn">קבע שיעור ניסיון</button>
+        <section class="section" id="about">
+            <p><strong>תן לעצמך את הכלים להצליח — בגוף, בנפש ובחיים.</strong></p>
+            <p> בדוג'ו שלנו אנחנו לא רק לומדים להילחם — אנחנו בונים ביטחון עצמי, משפרים את הכושר הגופני, מפתחים שליטה
+                עצמית ומגדלים עוצמה פנימית. אימוני ג'יוג'יטסו מתאימים לכל גיל ורמה, ומעניקים יתרונות לחיים
+                האמיתיים — מהגנה עצמית ועד לשיפור הריכוז והמשמעת. </p>
+            <p> הצוות שלנו כולל מאמנים מוסמכים בעלי ניסיון של עשרות שנים של הכולל עבודה עם גופים ביטחוניים, צבא ומשטרה.
+                יחד, המאמנים שלנו הובילו את תלמידיהם לזכייה באליפויות לאומיות רבות. </p>
+            <p><strong>אנחנו כאן כדי להוציא ממך את הלוחם — והאדם — הכי טוב שאתה יכול להיות.</strong></p>
+        </section>
+        <button class="btn" onclick="scrollToAnchor('#contact')">קבע שיעור ניסיון</button>
     </section>
 
     <section class="section" id="about">
         <h2>מי אנחנו</h2>
-        <p>ברוכים הבאים לדוג'ו מקצועי לג'יוג'יטסו ברזילאי. צוות המדריכים שלנו מורכב מאנשי מקצוע מנוסים, עם גישה אישית
+        <p>ברוכים הבאים לדוג'ו מקצועי לג'יוג'יטסו. צוות המדריכים שלנו מורכב מאנשי מקצוע מנוסים, עם גישה אישית
             לכל תלמיד ותלמידה.</p>
+        <h3>המאמנים שלנו</h3>
+        <p><strong>שאול</strong> - מאמן בעל ניסיון של 10 שנים בג'יוג'יטסו.</p>
+        <p><strong>ולדימיר</strong> - מאמן בעל ניסיון של 10 שנים בג'יוג'יטסו.</p>
     </section>
 
     <section class="section" id="adults">
@@ -143,16 +221,48 @@
         </div>
     </section>
 
+    <section class="section" id="gallery">
+        <h2>גלריה</h2>
+        <div class="gallery">
+            <img src="https://via.placeholder.com/300" alt="Image 1">
+            <img src="https://via.placeholder.com/300" alt="Image 2">
+            <img src="https://via.placeholder.com/300" alt="Image 3">
+        </div>
+        <p>צפה בווידאו שלנו:</p>
+        <video width="320" height="240" controls>
+            <source src="your-video.mp4" type="video/mp4">
+            דפדפן שלך לא תומך בנגן וידאו.
+        </video>
+    </section>
+
     <section class="section" id="contact">
         <h2>צור קשר</h2>
         <p>טלפון: 050-1234567<br>
             כתובת: רחוב הלוחם 10, תל אביב<br>
             אימייל: dojo@example.com</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com" target="_blank">פייסבוק</a>
+            <a href="https://www.instagram.com" target="_blank">אינסטגרם</a>
+        </div>
     </section>
 
     <footer>
         &copy; 2025 דוג'ו ג'יוג'יטסו - כל הזכויות שמורות
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('nav ul');
+            menu.classList.toggle('active');
+        }
+        function scrollToAnchor(anchorId) {
+            const target = document.querySelector(anchorId);
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+    </script>
 </body>
 
 </html>
