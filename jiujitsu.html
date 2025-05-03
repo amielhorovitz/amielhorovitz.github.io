@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>דוג'ו ג'יוג'יטסו</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #ffffff, #000000);
+        }
+
+        header {
+            background-color: #000;
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            font-size: 3rem;
+        }
+
+        .hero {
+            background-size: cover;
+            background-position: center;
+            color: #d32f2f;
+            text-align: center;
+            padding: 4rem 2rem;
+            opacity: 80%;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .btn {
+            background-color: #d32f2f;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .section {
+            padding: 2rem;
+            background-color: white;
+            margin: 1rem auto;
+            max-width: 700px;
+            border-radius: 8px;
+        }
+
+        .section h2 {
+            margin-bottom: 1rem;
+            color: #d32f2f;
+        }
+
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1rem;
+        }
+
+        .benefit-card {
+            background-color: #eee;
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        footer {
+            background-color: #111;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .social-links a {
+            margin: 0 10px;
+            font-size: 1.5rem;
+            color: #d32f2f;
+            text-decoration: none;
+        }
+
+        .social-links i {
+            margin-left: 10px;
+            font-size: 1.8rem;
+        }
+
+        .gallery img {
+            width: 100%;
+            max-width: 300px;
+            margin: 10px;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="headline">🥋 דוג'ו ג'יוג'יטסו 🥋</div>
+    </header>
+    <video autoplay muted loop playsinline class="background-video">
+        <source src="kata.mp4" type="video/mp4">
+        הדפדפן שלך לא תומך בוידאו.
+    </video>
+
+    <section class="hero">
+        <section class="section" id="about">
+            <h1>התחל את מסע הג'יוג'יטסו שלך היום</h1>
+            <p><strong>תן לעצמך את הכלים להצליח — בגוף, בנפש ובחיים.</strong></p>
+            <p> בדוג'ו שלנו אנחנו לא רק לומדים להילחם — אנחנו בונים ביטחון עצמי, משפרים את הכושר הגופני, מפתחים שליטה
+                עצמית ומגדלים עוצמה פנימית. אימוני ג'יוג'יטסו מתאימים לכל גיל ורמה, ומעניקים יתרונות לחיים
+                האמיתיים — מהגנה עצמית ועד לשיפור הריכוז והמשמעת. </p>
+            <p> הצוות שלנו כולל מאמנים מוסמכים בעלי ניסיון של עשרות שנים של הכולל עבודה עם גופים ביטחוניים, צבא ומשטרה.
+                יחד, המאמנים שלנו הובילו את תלמידיהם לזכייה באליפויות לאומיות רבות. </p>
+            <p><strong>אנחנו כאן כדי להוציא ממך את הלוחם — והאדם — הכי טוב שאתה יכול להיות.</strong></p>
+        </section>
+        <button class="btn" onclick="scrollToAnchor('#contact')">קבע שיעור ניסיון</button>
+    </section>
+
+    <section class="section" id="about">
+        <h2>מי אנחנו</h2>
+        <p>ברוכים הבאים לדוג'ו מקצועי לג'יוג'יטסו. צוות המדריכים שלנו מורכב מאנשי מקצוע מנוסים, עם גישה אישית
+            לכל תלמיד ותלמידה.</p>
+        <h3>המאמנים שלנו</h3>
+        <p><strong>שאול</strong> - מאמן בעל ניסיון של שנים בג'יוג'יטסו...</p>
+        <p><strong>ולדימיר</strong> - מאמן בעל ניסיון של שנים בג'יוג'יטסו...</p>
+    </section>
+
+    <section class="section" id="adults">
+        <h2>אימונים למבוגרים</h2>
+        <div class="benefits">
+            <div class="benefit-card">כושר גופני מעולה</div>
+            <div class="benefit-card">שליטה עצמית ומודעות</div>
+            <div class="benefit-card">הגנה עצמית יעילה</div>
+        </div>
+    </section>
+
+    <section class="section" id="kids">
+        <h2>אימונים לילדים</h2>
+        <div class="benefits">
+            <div class="benefit-card">ביטחון עצמי</div>
+            <div class="benefit-card">קואורדינציה ומשמעת</div>
+            <div class="benefit-card">פעילות גופנית מהנה</div>
+        </div>
+    </section>
+
+    <section class="section" id="gallery">
+        <h2>גלריה</h2>
+        <div class="gallery">
+            <img src="ground-fight.jpeg" alt="קרב קרקע">
+            <img src="knife-defence.jpeg" alt="התגוננות מול תוקף עם סכין">
+        </div>
+        <p>צפה בווידאו שלנו:</p>
+        <video width="320" height="240" controls>
+            <source src="your-video.mp4" type="video/mp4">
+            דפדפן שלך לא תומך בנגן וידאו.
+        </video>
+    </section>
+
+    <section class="section" id="contact">
+        <h2>צור קשר</h2>
+        <p>טלפון: 050-0000000<br>
+            אימייל: dojo@example.com
+        </p>
+        <p> כתובת: רחוב דליה 23, בת ים</p>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d824.2095419577365!2d34.75748662441166!3d32.00772138485205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d4892b18ac30d%3A0xd65967c79704257f!2z16TXmdeW15nXlSDXodeg15jXqA!5e0!3m2!1siw!2sil!4v1746260568474!5m2!1siw!2sil"
+            width="400" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="social-links">
+            <a href="https://www.facebook.com" target="_blank">פייסבוק</a>
+            <a href="https://www.instagram.com" target="_blank">אינסטגרם</a>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2025 דוג'ו ג'יוג'יטסו - כל הזכויות שמורות
+    </footer>
+
+    <script>
+        function scrollToAnchor(anchorId) {
+            const target = document.querySelector(anchorId);
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+    </script>
+</body>
+
+</html>
