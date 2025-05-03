@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <title>דוג'ו ג'יוג'יטסו</title>
     <style>
         body {
@@ -18,7 +19,16 @@
             padding: 1rem 2rem;
             display: flex;
             align-items: center;
-            font-size: 3rem;
+            justify-content: space-between;
+            direction: rtl;
+            flex-wrap: wrap;
+        }
+
+        /* Align items properly in RTL */
+        .logo {
+            font-size: 2rem;
+            order: 1;
+            /* right-most in RTL */
         }
 
         .hero {
@@ -92,16 +102,22 @@
             padding: 1rem;
         }
 
-        .social-links a {
-            margin: 0 10px;
-            font-size: 1.5rem;
-            color: #d32f2f;
-            text-decoration: none;
+
+        .social-icons {
+            display: flex;
+            gap: 1.5rem;
+            order: 3;
+            /* left-most in RTL */
+            margin-inline-start: auto;
         }
 
-        .social-links i {
-            margin-left: 10px;
-            font-size: 1.8rem;
+        .social-link {
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .social-link:hover {
+            color: #ccc;
         }
 
         .gallery img {
@@ -125,7 +141,15 @@
 
 <body>
     <header>
-        <div class="headline">🥋 דוג'ו ג'יוג'יטסו 🥋</div>
+        <div class="logo">🥋 דוג'ו ג'יוג'יטסו</div>
+        <div class="social-icons">
+            <a href="https://facebook.com/yourpage" target="_blank" class="social-link">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://instagram.com/yourpage" target="_blank" class="social-link">
+                <i class="fab fa-instagram"></i>
+            </a>
+        </div>
     </header>
     <video autoplay muted loop playsinline class="background-video">
         <source src="kata.mp4" type="video/mp4">
@@ -135,21 +159,20 @@
     <section class="hero">
         <section class="section" id="about">
             <h1>התחל את מסע הג'יוג'יטסו שלך היום</h1>
-            <p><strong>תן לעצמך את הכלים להצליח — בגוף, בנפש ובחיים.</strong></p>
-            <p> בדוג'ו שלנו אנחנו לא רק לומדים להילחם — אנחנו בונים ביטחון עצמי, משפרים את הכושר הגופני, מפתחים שליטה
-                עצמית ומגדלים עוצמה פנימית. אימוני ג'יוג'יטסו מתאימים לכל גיל ורמה, ומעניקים יתרונות לחיים
-                האמיתיים — מהגנה עצמית ועד לשיפור הריכוז והמשמעת. </p>
-            <p> הצוות שלנו כולל מאמנים מוסמכים בעלי ניסיון של עשרות שנים של הכולל עבודה עם גופים ביטחוניים, צבא ומשטרה.
-                יחד, המאמנים שלנו הובילו את תלמידיהם לזכייה באליפויות לאומיות רבות. </p>
-            <p><strong>אנחנו כאן כדי להוציא ממך את הלוחם — והאדם — הכי טוב שאתה יכול להיות.</strong></p>
+            <p><strong>תן לעצמך את הכלים להצליח - בגוף, בנפש ובחיים.</strong></p>
+            <p> בדוג'ו שלנו אנחנו לא רק לומדים להילחם - אנחנו בונים ביטחון עצמי, משפרים את הכושר הגופני, מפתחים שליטה
+                עצמית ועוצמה פנימית. אימוני ג'יוג'יטסו מתאימים לכל גיל ורמה, ומעניקים יתרונות לחיים
+                האמיתיים - מהגנה עצמית ועד לשיפור הריכוז והמשמעת. </p>
+            <p><strong>אנחנו כאן כדי להוציא ממך את הלוחם - והאדם - הכי טוב שאתה יכול להיות.</strong></p>
         </section>
         <button class="btn" onclick="scrollToAnchor('#contact')">קבע שיעור ניסיון</button>
     </section>
 
     <section class="section" id="about">
         <h2>מי אנחנו</h2>
-        <p>ברוכים הבאים לדוג'ו מקצועי לג'יוג'יטסו. צוות המדריכים שלנו מורכב מאנשי מקצוע מנוסים, עם גישה אישית
-            לכל תלמיד ותלמידה.</p>
+        <p> הצוות שלנו כולל מאמנים מוסמכים בעלי ניסיון של עשרות שנים של הכולל עבודה עם גופים ביטחוניים, צבא ומשטרה.
+            יחד, המאמנים שלנו הובילו את תלמידיהם לזכייה באליפויות לאומיות רבות. </p>
+
         <h3>המאמנים שלנו</h3>
         <p><strong>שאול</strong> - מאמן בעל ניסיון של שנים בג'יוג'יטסו...</p>
         <p><strong>ולדימיר</strong> - מאמן בעל ניסיון של שנים בג'יוג'יטסו...</p>
@@ -194,12 +217,8 @@
         <p> כתובת: רחוב דליה 23, בת ים</p>
         <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d824.2095419577365!2d34.75748662441166!3d32.00772138485205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d4892b18ac30d%3A0xd65967c79704257f!2z16TXmdeW15nXlSDXodeg15jXqA!5e0!3m2!1siw!2sil!4v1746260568474!5m2!1siw!2sil"
-            width="400" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+            width="80%" height="80%" style="border:0;" allowfullscreen="" loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"></iframe>
-        <div class="social-links">
-            <a href="https://www.facebook.com" target="_blank">פייסבוק</a>
-            <a href="https://www.instagram.com" target="_blank">אינסטגרם</a>
-        </div>
     </section>
 
     <footer>
