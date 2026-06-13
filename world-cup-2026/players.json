@@ -1,6 +1,8 @@
 [
-  { "name": "John", "score": 28 },
-  { "name": "Sarah", "score": 35 },
-  { "name": "Mike", "score": 22 },
-  { "name": "David", "score": 31 }
+  { "name": "Amiel", "score": 2 },
+  { "name": "Yossi", "score": 0 },
+  { "name": "Yoav", "score": 1 },
+  { "name": "Freddy", "score": 1 },
+  { "name": "Matan", "score": 0 },
+  { "name": "Dolev", "score": 0 },
 ]
