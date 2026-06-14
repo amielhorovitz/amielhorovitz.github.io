@@ -1,8 +1,11 @@
 [
   { "name": "Amiel", "score": 2 },
-  { "name": "Yossi", "score": 0 },
+  { "name": "Lena", "score": 0 },
+  { "name": "Yossi", "score": 1 },
   { "name": "Yoav", "score": 1 },
-  { "name": "Freddy", "score": 1 },
+  { "name": "Freddy", "score": 2 },
   { "name": "Matan", "score": 0 },
-  { "name": "Dolev", "score": 0 }
+  { "name": "Dolev", "score": 0 },
+  { "name": "Eden", "score": 1 },
+  { "name": "Ben", "score": 0 }
 ]
