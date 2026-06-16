@@ -2,10 +2,11 @@
   { "name": "Amiel", "score": 3 },
   { "name": "Lena", "score": 2 },
   { "name": "Yossi", "score": 2 },
-  { "name": "Yoav", "score": 3 },
+  { "name": "Yoav", "score": 4 },
   { "name": "Freddy", "score": 2 },
   { "name": "Matan", "score": 1 },
   { "name": "Dolev", "score": 1 },
-  { "name": "Eden", "score": 1 },
-  { "name": "Ben", "score": 0 }
+  { "name": "Eden", "score": 2 },
+  { "name": "Ben", "score": 0 },
+  { "name": "Dor", "score": 0 }
 ]
