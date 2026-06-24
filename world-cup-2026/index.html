@@ -326,16 +326,21 @@ async function loadLeaderboard() {
         document.getElementById('leaderboard').innerHTML =
             players.map((player, index) => {
 
+                // Check if this player is in the very last position (and not the only player)
+                const isLastPlace = index === players.length - 1 && players.length > 1;
+
                 const medal =
                     index === 0 ? '🥇' :
                     index === 1 ? '🥈' :
                     index === 2 ? '🥉' :
+                    isLastPlace ? '🫏' : // Adds the donkey emoji to the last place
                     '#' + (index + 1);
 
                 const rowClass =
                     index === 0 ? 'rank-1' :
                     index === 1 ? 'rank-2' :
                     index === 2 ? 'rank-3' :
+                    isLastPlace ? 'rank-last' : // Optional: adds a CSS class for the last place
                     '';
 
                 return `
