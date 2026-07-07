@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>World Cup 2026 Predictions League VIP</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --gold: #d4af37;
+    --gold-glow: rgba(212, 175, 55, 0.3);
+    --silver: #D9D9D9;
+    --bronze: #CD7F32;
+    --bg1: #0a1c15; /* Sleek Stadium Night Green */
+    --bg2: #050b08; /* Dark Pitch Shadow */
+    --bg3: #020503;
+    --neon-green: #00ff87; /* Football pitch cyber neon */
+    --text-muted: #8fa399;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Inter, sans-serif;
+    color: white;
+    min-height: 100vh;
+    padding: 40px 20px;
+
+    /* Elevated Stadium Lighting Ambient Glow */
+    background:
+        radial-gradient(circle at top center,
+        rgba(0, 255, 135, 0.12),
+        transparent 35%),
+
+        radial-gradient(circle at bottom center,
+        rgba(212, 175, 55, 0.08),
+        transparent 45%),
+
+        linear-gradient(
+            180deg,
+            var(--bg1),
+            var(--bg2) 50%,
+            var(--bg3)
+        );
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+
+    background:
+        radial-gradient(circle at 15% 0,
+            rgba(255,255,255,.05),
+            transparent 25%),
+
+        radial-gradient(circle at 85% 0,
+            rgba(255,255,255,.05),
+            transparent 25%);
+}
+
+.container {
+    max-width: 950px;
+    margin: auto;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.trophy {
+    font-size: 82px;
+    filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.6));
+}
+
+/* VIP Typography treatment */
+h1 {
+    margin-top: 10px;
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: linear-gradient(to bottom, #ffffff, #b8c6c0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h1 span {
+    color: var(--neon-green);
+    -webkit-text-fill-color: var(--neon-green);
+    text-shadow: 0 0 20px rgba(0, 255, 135, 0.4);
+}
+
+.subtitle {
+    margin-top: 8px;
+    color: var(--text-muted);
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+}
+
+/* VIP Badge Styling */
+.status-bar {
+    width: fit-content;
+    margin: 20px auto 30px;
+    padding: 8px 24px;
+    border-radius: 999px;
+    background: linear-gradient(90deg, var(--gold), #f3e5ab, var(--gold));
+    color: #000;
+    font-weight: 800;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    box-shadow: 0 0 20px var(--gold-glow);
+}
+
+/* Premium Leader Card Card with Gold Trimming */
+.leader-card {
+    text-align: center;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(212, 175, 55, 0.15),
+            rgba(16, 37, 28, 0.6)
+        );
+
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    border-radius: 24px;
+    padding: 28px;
+    margin-bottom: 24px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4), 0 0 30px rgba(212, 175, 55, 0.1);
+}
+
+.leader-label {
+    color: var(--gold);
+    font-size: .85rem;
+    letter-spacing: 3px;
+    font-weight: 800;
+}
+
+.leader-name {
+    margin-top: 10px;
+    font-size: 2.2rem;
+    font-weight: 900;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.leader-score {
+    margin-top: 6px;
+    color: var(--neon-green);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+/* Glassmorphism Leaderboard Container */
+.card {
+    overflow: hidden;
+    border-radius: 24px;
+    background: rgba(16, 37, 28, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(20px);
+    box-shadow:
+        0 30px 60px rgba(0,0,0,.6),
+        inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Premium Pitch Green Table Header */
+thead {
+    background: linear-gradient(90deg, #0b2e20, #061a12);
+    border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+}
+
+th {
+    padding: 20px;
+    text-align: left;
+    font-size: .8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 700;
+}
+
+td {
+    padding: 20px;
+}
+
+tbody tr {
+    border-top: 1px solid rgba(255,255,255,.04);
+    transition: .2s ease-in-out;
+}
+
+tbody tr:hover {
+    background: rgba(0, 255, 135, 0.04);
+}
+
+/* Elite Podium Placements Subtle Glows */
+.rank-1 {
+    background: linear-gradient(90deg, rgba(212, 175, 55, 0.08), transparent);
+}
+
+.rank-2 {
+    background: linear-gradient(90deg, rgba(218, 218, 218, 0.05), transparent);
+}
+
+.rank-3 {
+    background: linear-gradient(90deg, rgba(205, 127, 50, 0.05), transparent);
+}
+
+.position {
+    font-size: 1.15rem;
+    font-weight: 800;
+}
+
+.score {
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: var(--neon-green);
+}
+
+.loading,
+.error {
+    text-align: center;
+    padding: 40px;
+    color: var(--text-muted);
+}
+
+.footer {
+    text-align: center;
+    margin-top: 30px;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+@media (max-width: 700px) {
+    th, td {
+        padding: 16px 14px;
+    }
+
+    .leader-name {
+        font-size: 1.7rem;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="hero">
+        <div class="trophy">🏆</div>
+        <h1>World Cup <span>2026</span></h1>
+        <div class="subtitle">VIP Predictions League</div>
+    </div>
+
+    <div class="status-bar">
+        ★ VIP LOUNGE LEADERBOARD ★
+    </div>
+
+    <div id="leaderCard"></div>
+
+    <div class="card">
+        <table>
+            <thead>
+                <tr>
+                    <th>Position</th>
+                    <th>Player</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+
+            <tbody id="leaderboard">
+                <tr>
+                    <td colspan="3" class="loading">
+                        Loading leaderboard...
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="footer">
+        FIFA World Cup 2026 • VIP Prediction League
+    </div>
+
+</div>
+
+<script>
+async function loadLeaderboard() {
+    try {
+        const response = await fetch('players.json');
+
+        if (!response.ok) {
+            throw new Error('Failed to load players.json');
+        }
+
+        const players = await response.json();
+
+        players.sort((a, b) => b.score - a.score);
+
+        const leader = players[0];
+
+        document.getElementById('leaderCard').innerHTML = `
+            <div class="leader-card">
+                <div class="leader-label">🏆 CURRENT VIP LEADER</div>
+                <div class="leader-name">${leader.name}</div>
+                <div class="leader-score">${leader.score} PTS</div>
+            </div>
+        `;
+
+        document.getElementById('leaderboard').innerHTML =
+            players.map((player, index) => {
+
+                // Check if this player is in the very last position (and not the only player)
+                const isLastPlace = index === players.length - 1 && players.length > 1;
+
+                const medal =
+                    index === 0 ? '🥇' :
+                    index === 1 ? '🥈' :
+                    index === 2 ? '🥉' :
+                    isLastPlace ? '#' + (index + 1) + ' 🫏' : // Adds the donkey emoji to the last place
+                    '#' + (index + 1);
+
+                const rowClass =
+                    index === 0 ? 'rank-1' :
+                    index === 1 ? 'rank-2' :
+                    index === 2 ? 'rank-3' :
+                    '';
+
+                return `
+                    <tr class="${rowClass}">
+                        <td class="position">${medal}</td>
+                        <td>${player.name}</td>
+                        <td class="score">${player.score}</td>
+                    </tr>
+                `;
+            }).join('');
+
+    } catch (error) {
+        document.getElementById('leaderboard').innerHTML = `
+            <tr>
+                <td colspan="3" class="error">
+                    Failed to load players.json
+                </td>
+            </tr>
+        `;
+        console.error(error);
+    }
+}
+
+loadLeaderboard();
+</script>
+
+</body>
+</html>
