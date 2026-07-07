@@ -305,10 +305,10 @@ tbody tr:hover {
 <script>
 async function loadLeaderboard() {
     try {
-        const response = await fetch('players.json');
+        const response = await fetch('vip-players.json');
 
         if (!response.ok) {
-            throw new Error('Failed to load players.json');
+            throw new Error('Failed to load vip-players.json');
         }
 
         const players = await response.json();
@@ -357,7 +357,7 @@ async function loadLeaderboard() {
         document.getElementById('leaderboard').innerHTML = `
             <tr>
                 <td colspan="3" class="error">
-                    Failed to load players.json
+                    Failed to load vip-players.json
                 </td>
             </tr>
         `;
