@@ -1,9 +1,9 @@
 [
-  { "name": "Amiel", "score": 6 },
-  { "name": "Lena", "score": 7 },
-  { "name": "Yossi", "score": 2 },
-  { "name": "Yoav", "score": 4 },
-  { "name": "Freddy", "score": 8 },
-  { "name": "Dolev", "score": 4 },
-  { "name": "Eden", "score": 7 }
+  { "name": "Amiel", "score": 7 },
+  { "name": "Lena", "score": 8 },
+  { "name": "Yossi", "score": 4 },
+  { "name": "Yoav", "score": 6 },
+  { "name": "Freddy", "score": 10 },
+  { "name": "Dolev", "score": 6 },
+  { "name": "Eden", "score": 9 }
 ]
