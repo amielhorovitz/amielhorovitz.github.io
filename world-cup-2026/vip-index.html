@@ -168,3 +168,212 @@ h1 span {
     border-radius: 24px;
     background: rgba(16, 37, 28, 0.45);
     border: 1px solid rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(20px);
+    box-shadow:
+        0 30px 60px rgba(0,0,0,.6),
+        inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Premium Pitch Green Table Header */
+thead {
+    background: linear-gradient(90deg, #0b2e20, #061a12);
+    border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+}
+
+th {
+    padding: 20px;
+    text-align: left;
+    font-size: .8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 700;
+}
+
+td {
+    padding: 20px;
+}
+
+tbody tr {
+    border-top: 1px solid rgba(255,255,255,.04);
+    transition: .2s ease-in-out;
+}
+
+tbody tr:hover {
+    background: rgba(0, 255, 135, 0.04);
+}
+
+/* Elite Podium Placements Subtle Glows */
+.rank-1 {
+    background: linear-gradient(90deg, rgba(212, 175, 55, 0.08), transparent);
+}
+
+.rank-2 {
+    background: linear-gradient(90deg, rgba(218, 218, 218, 0.05), transparent);
+}
+
+.rank-3 {
+    background: linear-gradient(90deg, rgba(205, 127, 50, 0.05), transparent);
+}
+
+.position {
+    font-size: 1.15rem;
+    font-weight: 800;
+}
+
+.score {
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: var(--neon-green);
+}
+
+.champion-pick {
+    font-weight: 500;
+    color: #ffffff;
+}
+
+.loading,
+.error {
+    text-align: center;
+    padding: 40px;
+    color: var(--text-muted);
+}
+
+.footer {
+    text-align: center;
+    margin-top: 30px;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+@media (max-width: 700px) {
+    th, td {
+        padding: 16px 14px;
+    }
+
+    .leader-name {
+        font-size: 1.7rem;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="hero">
+        <div class="trophy">🏆</div>
+        <h1>World Cup <span>2026</span></h1>
+        <div class="subtitle">VIP Predictions League</div>
+    </div>
+
+    <div class="status-bar">
+        Correct Predictions Ranking
+    </div>
+
+    <div id="leaderCard"></div>
+
+    <div class="card">
+        <table>
+            <thead>
+                <tr>
+                    <th>Position</th>
+                    <th>Player</th>
+                    <th>Team</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+
+            <tbody id="leaderboard">
+                <tr>
+                    <td colspan="4" class="loading">
+                        Loading leaderboard...
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="footer">
+        FIFA World Cup 2026 • VIP Prediction League
+    </div>
+
+</div>
+
+<script>
+async function loadLeaderboard() {
+    try {
+        const response = await fetch('vip-players.json');
+
+        if (!response.ok) {
+            throw new Error('Failed to load vip-players.json');
+        }
+
+        const players = await response.json();
+
+        players.sort((a, b) => b.score - a.score);
+
+        const leader = players[0];
+
+        document.getElementById('leaderCard').innerHTML = `
+            <div class="leader-card">
+                <div class="leader-label">🏆 CURRENT LEADER</div>
+                <div class="leader-name">${leader.name}</div>
+                <div class="leader-score">${leader.score} Points</div>
+            </div>
+        `;
+
+        document.getElementById('leaderboard').innerHTML =
+            players.map((player, index) => {
+
+                // Check if this player is in the very last position (and not the only player)
+                const isLastPlace = index === players.length - 1 && players.length > 1;
+
+                const medal =
+                    index === 0 ? '🥇' :
+                    index === 1 ? '🥈' :
+                    index === 2 ? '🥉' :
+                    isLastPlace ? '#' + (index + 1) + ' 🫏' : // Adds the donkey emoji to the last place
+                    '#' + (index + 1);
+
+                const rowClass =
+                    index === 0 ? 'rank-1' :
+                    index === 1 ? 'rank-2' :
+                    index === 2 ? 'rank-3' :
+                    '';
+
+                return `
+                    <tr class="${rowClass}">
+                        <td class="position">${medal}</td>
+                        <td>${player.name}</td>
+                        <td class="champion-pick">${player.champion || 'N/A'}</td>
+                        <td class="score">${player.score}</td>
+                    </tr>
+                `;
+            }).join('');
+
+    } catch (error) {
+        document.getElementById('leaderboard').innerHTML = `
+            <tr>
+                <td colspan="4" class="error">
+                    Failed to load vip-players.json
+                </td>
+            </tr>
+        `;
+        console.error(error);
+    }
+}
+
+loadLeaderboard();
+</script>
+
+</body>
+</html>
