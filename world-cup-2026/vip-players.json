@@ -1,9 +1,9 @@
 [
-  { "name": "Amiel", "score": 12 },
-  { "name": "Lena", "score": 12 },
-  { "name": "Yossi", "score": 7 },
-  { "name": "Yoav", "score": 10 },
-  { "name": "Freddy", "score": 15 },
-  { "name": "Dolev", "score": 10 },
-  { "name": "Eden", "score": 12 }
+  { "name": "Amiel", "score": 12, champion: "🇦🇷" },
+  { "name": "Lena", "score": 12, champion: "🇦🇷" },
+  { "name": "Yossi", "score": 7, champion: "🇳🇴" },
+  { "name": "Yoav", "score": 10, champion: "🇫🇷" },
+  { "name": "Freddy", "score": 15, champion: "🇫🇷" },
+  { "name": "Dolev", "score": 10, champion: "🇫🇷" },
+  { "name": "Eden", "score": 12, champion: "🇫🇷" }
 ]
