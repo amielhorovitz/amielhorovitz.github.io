@@ -123,4 +123,48 @@ h1 span {
     box-shadow: 0 0 20px var(--gold-glow);
 }
 
-/* Premium Leader Card
+/* Premium Leader Card Card with Gold Trimming */
+.leader-card {
+    text-align: center;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(212, 175, 55, 0.15),
+            rgba(16, 37, 28, 0.6)
+        );
+
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    border-radius: 24px;
+    padding: 28px;
+    margin-bottom: 24px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4), 0 0 30px rgba(212, 175, 55, 0.1);
+}
+
+.leader-label {
+    color: var(--gold);
+    font-size: .85rem;
+    letter-spacing: 3px;
+    font-weight: 800;
+}
+
+.leader-name {
+    margin-top: 10px;
+    font-size: 2.2rem;
+    font-weight: 900;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.leader-score {
+    margin-top: 6px;
+    color: var(--neon-green);
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+/* Glassmorphism Leaderboard Container */
+.card {
+    overflow: hidden;
+    border-radius: 24px;
+    background: rgba(16, 37, 28, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.06);
