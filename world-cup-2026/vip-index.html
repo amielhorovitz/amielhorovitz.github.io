@@ -232,6 +232,11 @@ tbody tr:hover {
     color: var(--neon-green);
 }
 
+.champion-pick {
+    font-weight: 500;
+    color: #ffffff;
+}
+
 .loading,
 .error {
     text-align: center;
@@ -282,13 +287,14 @@ tbody tr:hover {
                 <tr>
                     <th>Position</th>
                     <th>Player</th>
+                    <th>Champion Pick</th>
                     <th>Score</th>
                 </tr>
             </thead>
 
             <tbody id="leaderboard">
                 <tr>
-                    <td colspan="3" class="loading">
+                    <td colspan="4" class="loading">
                         Loading leaderboard...
                     </td>
                 </tr>
@@ -348,6 +354,7 @@ async function loadLeaderboard() {
                     <tr class="${rowClass}">
                         <td class="position">${medal}</td>
                         <td>${player.name}</td>
+                        <td class="champion-pick">${player.champion || 'N/A'}</td>
                         <td class="score">${player.score}</td>
                     </tr>
                 `;
@@ -356,7 +363,7 @@ async function loadLeaderboard() {
     } catch (error) {
         document.getElementById('leaderboard').innerHTML = `
             <tr>
-                <td colspan="3" class="error">
+                <td colspan="4" class="error">
                     Failed to load vip-players.json
                 </td>
             </tr>
