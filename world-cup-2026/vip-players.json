@@ -1,9 +1,9 @@
 [
-  { "name": "Amiel", "score": 17, "champion": "🇦🇷" },
+  { "name": "Amiel", "score": 18, "champion": "🇦🇷" },
   { "name": "Lena", "score": 16, "champion": "🇦🇷" },
   { "name": "Yossi", "score": 10, "champion": "🇳🇴" },
-  { "name": "Yoav", "score": 15, "champion": "🇫🇷" },
-  { "name": "Freddy", "score": 17, "champion": "🇫🇷" },
-  { "name": "Dolev", "score": 12, "champion": "🇫🇷" },
-  { "name": "Eden", "score": 14, "champion": "🇫🇷" }
+  { "name": "Yoav", "score": 16, "champion": "🇫🇷" },
+  { "name": "Freddy", "score": 19, "champion": "🇫🇷" },
+  { "name": "Dolev", "score": 13, "champion": "🇫🇷" },
+  { "name": "Eden", "score": 16, "champion": "🇫🇷" }
 ]
